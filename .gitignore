@@ -3,3 +3,4 @@ rax-oom-test
 *.o
 *.dSYM
 a.out
+.vscode

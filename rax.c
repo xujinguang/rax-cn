@@ -193,7 +193,7 @@ static inline void raxStackFree(raxStack *ts)
  *  8 - 2 = 6 & 7 = 6 
  *  ((nodesize + 4) % sizeof(void *)) 获取余数
  *  (sizeof(void *) 减去余就是padding的大小，不明白再&下掩码有啥用
- *  4应该换成sizeof(void *)才对，否则固定按照4字节，可能为了节省空间？对于8字节地址，最大填充7个字节略微浪费。
+ *  按照4字节，可能为了节省空间？对于8字节地址，填充字节略微浪费。
  */
 #define raxPadding(nodesize) ((sizeof(void *) - ((nodesize + 4) % sizeof(void *))) & (sizeof(void *) - 1))
 

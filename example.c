@@ -74,7 +74,8 @@ int testRax()
     return 0;
 }
 
-#define raxPadding(nodesize) ((sizeof(void *) - ((nodesize + sizeof(void *)) % sizeof(void *))) & (sizeof(void *) - 1))
+#define raxPadding(nodesize) ((sizeof(void *) - ((nodesize + 4) % sizeof(void *))) & (sizeof(void *) - 1))
+#define raxPadding2(nodesize) (sizeof(void *) - ((nodesize + sizeof(void *)) % sizeof(void *)))
 int main()
 {
     //testRax();
